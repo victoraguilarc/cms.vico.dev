@@ -1,11 +1,5 @@
-# DEV Stake Pool
+# Website
 
-Dedicated staking pool for cardano dev community
-https://pool.devs.tools
+Personal Blog 
+https://vico.dev
 
-### Development
-
-```bash
-make build
-make up
-```

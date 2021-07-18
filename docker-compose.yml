@@ -11,7 +11,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ./src:/var/lib/ghost/content.orig/themes/main
+      - ./theme:/var/lib/ghost/content.orig/themes/main
+      - ./content:/var/lib/ghost/content
 
   db:
     image: mariadb:latest
