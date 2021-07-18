@@ -2,30 +2,26 @@ version: "3.4"
 
 services:
   ghost:
-    image: ghost:4
+    image: ghost:latest
     restart: always
-    ports:
-      - 8100:2368
     depends_on:
       - db
+    ports:
+      - 8000:2368
     environment:
-      url: https://<domain>
+      url: http://localhost:8000
       database__client: mysql
       database__connection__host: db
       database__connection__user: root
       database__connection__password: ghost
       database__connection__database: ghost
     volumes:
-      - ./theme:/var/lib/ghost/content.orig/themes/main
       - ./content:/var/lib/ghost/content
-      - ./config.production.json:/var/lib/ghost/config.production.json
-
+      - ./theme:/var/lib/ghost/content.orig/themes/main
   db:
     image: mariadb:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ghost
+      MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./data:/var/lib/mysql
-    env_file:
-      - .env

@@ -1,0 +1,37 @@
+{
+  "url": "http://vico.server",
+  "server": {
+    "port": 2368,
+    "host": "127.0.0.1"
+  },
+  "database": {
+    "client": "mysql",
+    "connection": {
+      "host": "db",
+      "user": "ghost",
+      "password": "ghost",
+      "database": "ghost",
+      "charset": "utf8"
+    }
+  },
+  "mail": {
+    "from": "'Victor Aguilar' <vicobits@gmail.com>",
+    "transport": "SMTP",
+    "options": {
+      "service": "Mailgun",
+      "host": "smtp.mailgun.org",
+      "port": 465,
+      "secureConnection": true,
+      "auth": {
+        "user": "postmaster@mail.mydomain.com",
+        "pass": "7adsf7f8asd8f6as7asd7f-123sdf8-asdf87fa"
+      }
+    }
+  },
+  "logging": {
+    "transports": ["file", "stdout"]
+  },
+  "paths": {
+    "contentPath": "/var/lib/ghost/content"
+  }
+}

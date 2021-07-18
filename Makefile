@@ -1,5 +1,5 @@
 
-COMPOSE := docker-compose -f docker-compose.yml
+COMPOSE := docker-compose -f docker-compose.dev.yml
 
 clean:
 	@echo "Cleaning containers ..."
