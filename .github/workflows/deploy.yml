@@ -12,7 +12,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-            cd /home/tools/beta.vico.dev
+            cd /home/tools/vico.dev
             git pull origin master
           host: ${{ secrets.HOST }}
           user: tools
