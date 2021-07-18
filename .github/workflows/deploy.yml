@@ -1,0 +1,21 @@
+name: Deploy Site Theme
+on: 
+  push:
+    branches:
+      - master
+jobs:
+
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploying theme
+      uses: fifsky/ssh-action@master
+      with:
+        command: |
+          cd /home/tools/pool-website
+          git pull origin master
+        host: ${{ secrets.HOST }}
+        user: tools
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
